@@ -16,6 +16,7 @@ import pe.edu.upeu.primerTrabajo.entity.Producto;
  */
 @Service
 public class ProductoServicio {
+    
     @Autowired
     private ProductoDao productoDao;
     
@@ -27,11 +28,11 @@ public class ProductoServicio {
         productoDao.save(producto);
     }
     
-    public Producto get(Integer idProducto){
-        return productoDao.findById(idProducto).get();
+    public Producto get(long id){
+        return productoDao.findById(id).get();
     }
     
-    public void delete (Integer idProducto){
-        productoDao.deleteById(idProducto);
+    public void delete(long id){
+        productoDao.deleteById(id);
     }
 }

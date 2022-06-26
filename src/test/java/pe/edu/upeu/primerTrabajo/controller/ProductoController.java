@@ -24,8 +24,8 @@ public class ProductoController {
     
     @RequestMapping("/")
     public String verPaginaDeInicio(Model modelo){
-        List<Producto> listarProductos=productoServicio.listAll();
-        modelo.addAttribute("listarProductos", listarProductos);
+        List<Producto> listaProductos=productoServicio.listAll();
+        modelo.addAttribute("listaProductos", listaProductos);
         return "Index";
     }
 }

@@ -4,36 +4,46 @@
  */
 package pe.edu.upeu.primerTrabajo.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-
-/**
- *
- * @author HP
- */
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Producto {
-    private Integer idProducto;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(nullable = false, length = 60)
     private String nombreProducto;
-    private double precio;
-    private Integer stock;
+
+    @Column(nullable = false, length = 60)
+    private float precio;
+
+    @Column(nullable = false)
+    private long stock;
 
     public Producto() {
+        super();
     }
 
-    public Producto(Integer idProducto, String nombreProducto, double precio, Integer stock) {
-        this.idProducto = idProducto;
+    public Producto(long id, String nombreProducto, float precio, long stock) {
+        super();
+        this.id = id;
         this.nombreProducto = nombreProducto;
         this.precio = precio;
         this.stock = stock;
     }
 
-    public Integer getIdProducto() {
-        return idProducto;
+    public long getId() {
+        return id;
     }
 
-    public void setIdProducto(Integer idProducto) {
-        this.idProducto = idProducto;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNombreProducto() {
@@ -44,19 +54,19 @@ public class Producto {
         this.nombreProducto = nombreProducto;
     }
 
-    public double getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
 
-    public Integer getStock() {
+    public long getStock() {
         return stock;
     }
 
-    public void setStock(Integer stock) {
+    public void setStock(long stock) {
         this.stock = stock;
     }
     

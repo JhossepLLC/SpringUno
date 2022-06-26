@@ -11,6 +11,7 @@ import pe.edu.upeu.primerTrabajo.entity.Producto;
  *
  * @author HP
  */
-public interface ProductoDao extends JpaRepository<Producto, Integer>{
+
+public interface ProductoDao extends JpaRepository<Producto, Long>{
     
 }
